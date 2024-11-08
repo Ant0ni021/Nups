@@ -6,8 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    {{>header}}
+    {{#unless esconderHeader}}
+      {{>header}}
+    {{/unless}}  
+
+ 
     {{{body}}}
+ 
 
 </body>
 </html>

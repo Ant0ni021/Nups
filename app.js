@@ -1,9 +1,10 @@
+// app.js
 const express = require('express');
 const { engine } = require('express-handlebars');
 const path = require('path');
 const app = express();
 
-// Configuração do Handlebars com o helper "eq"
+// Configuração do Handlebars
 app.engine(
     'handlebars',
     engine({
@@ -22,25 +23,41 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Rotas
 
-
-app.get('/', function(req, res) {
-    res.render('login');
+// Página de login, passando 'esconderHeader: true'
+app.get('/', (req, res) => {
+    res.render('Login', {
+      title: 'Login',
+      esconderHeader: true  // Passando a variável para ocultar o header
+    });
 });
 
-app.get('/dashboard', function(req, res) {
-    res.render('dashboard');
+// Outras rotas, onde o header não será ocultado
+app.get('/dashboard', (req, res) => {
+    res.render('dashboard', {
+      title: 'Dashboard',
+      esconderHeader: false  // Passando 'false' para mostrar o header
+    });
 });
 
-app.get('/Create_Profissional', function(req, res) {
-    res.render('Create_Profissional');
+app.get('/Create_Profissional', (req, res) => {
+    res.render('Create_Profissional', {
+      title: 'Cadastro de Profissional',
+      esconderHeader: false  // Passando 'false' para mostrar o header
+    });
 });
 
-app.get('/Edit_Profissional', function(req, res) {
-    res.render('Edit_Profissional');
+app.get('/Edit_Profissional', (req, res) => {
+    res.render('Edit_Profissional', {
+      title: 'Editar Profissional',
+      esconderHeader: false  // Passando 'false' para mostrar o header
+    });
 });
 
-app.get('/Lista_De_Profissional', function(req, res) {
-    res.render('Lista_De_Profissional');
+app.get('/Lista_De_Profissional', (req, res) => {
+    res.render('Lista_De_Profissional', {
+      title: 'Lista de Profissionais',
+      esconderHeader: false  // Passando 'false' para mostrar o header
+    });
 });
 
 // Inicialização do servidor
