@@ -1,0 +1,46 @@
+   
+   <!DOCTYPE html>
+   <html lang="pt-br">
+   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/CSS/Styles_Login.css">
+   </head>
+   <body>
+     <div class="login-container">
+    <!-- Logo da Empresa -->
+    <img src="/IMG/pisico-removebg-preview.png" alt="Logo da Empresa" class="logo">
+    
+    <h1>Login</h1>
+
+    <!-- Exibe mensagens de erro ou sucesso -->
+    {{#if error_msg}}
+        <div class="message error" aria-live="polite">{{error_msg}}</div>
+    {{/if}}
+    {{#if success_msg}}
+        <div class="message success" aria-live="polite">{{success_msg}}</div>
+    {{/if}}
+
+    <!-- Formulário de login -->
+    <form action="/auth/login" method="POST">
+        <div>
+            
+            <input type="text" id="usuario" name="usuario" placeholder="Usuário" autocomplete="username" required autofocus>
+        </div>
+
+        <div>
+           
+            <input type="password" id="senha"  placeholder="Senha"  name="senha" autocomplete="current-password" required>
+        </div>
+
+        <button type="submit" >Login</button>
+    </form>
+</div>
+
+
+    
+
+    
+   </body>
+   </html>
