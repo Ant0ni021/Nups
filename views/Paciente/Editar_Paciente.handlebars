@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/Paciente_Editar.css">
+    <title>Editar Paciente</title>
+</head>
+<body>
+    <h2>Editar Paciente</h2>
+
+    <!-- Exemplo de formatação de data -->
+    <p>Data formatada: {{formatDate "2024-11-09" "DD/MM/YYYY"}}</p>
+
+    <form action="/pacientes/{{paciente.id}}?_method=PUT" method="POST" onsubmit="setCurrentDate()">
+        <input type="hidden" name="_method" value="PUT"> 
+        <input type="hidden" name="dataAtendimento" id="dataAtendimento">
+
+        <fieldset class="border p-4 mb-4">
+            <legend>Informações Pessoais</legend>
+
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" class="form-control" name="nome" id="nome" value="{{paciente.nome}}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="matricula">Matrícula:</label>
+                <input type="text" class="form-control" name="matricula" id="matricula" value="{{paciente.matricula}}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dataNascimento">Data de Nascimento:</label>
+                <input type="date" class="form-control" name="dataNascimento" id="dataNascimento" value="{{formatDate paciente.dataNascimento 'YYYY-MM-DD'}}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="sexo">Sexo:</label>
+                <select class="form-control" name="sexo" id="sexo" required>
+                    <option value="Masculino" {{#if (eq paciente.sexo 'Masculino')}}selected{{/if}}>Masculino</option>
+                    <option value="Feminino" {{#if (eq paciente.sexo 'Feminino')}}selected{{/if}}>Feminino</option>
+                    <option value="Outro" {{#if (eq paciente.sexo 'Outro')}}selected{{/if}}>Outro</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" class="form-control" name="email" id="email" value="{{paciente.email}}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telefone">Telefone:</label>
+                <input type="tel" class="form-control" name="telefone" id="telefone" value="{{paciente.telefone}}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="endereco">Endereço:</label>
+                <input type="text" class="form-control" name="endereco" id="endereco" value="{{paciente.endereco}}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dataAtendimento">Data de Atendimento:</label>
+                <input type="text" class="form-control" name="dataAtendimento" id="dataAtendimento" readonly>
+            </div>
+        </fieldset>
+
+        <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+    </form>
+
+    <script>
+        function setCurrentDate() {
+            const date = new Date();
+            const formattedDate = date.toISOString().split('T')[0]; // Formato "YYYY-MM-DD"
+            document.getElementById('dataAtendimento').value = formattedDate;
+        }
+    </script>
+</body>
+</html>
