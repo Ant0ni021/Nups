@@ -121,6 +121,32 @@ app.get('/Listar_Paciente', (req, res) => {
   });
 });
 
+// Criar Ocorrencia
+app.get('/Ocorrencia_Creat', (req, res) => {
+    res.render('Ocorrencia_Creat', {
+        title: 'Editar Paciente',
+        esconderHeader: false 
+    });
+  });
+
+  
+// Editar Ocorrencia
+app.get('/Ocorrencia_Edit', (req, res) => {
+    res.render('Ocorrencia_Edit', {
+        title: 'Editar Paciente',
+        esconderHeader: false 
+    });
+  });
+  
+  // listar Ocorrencia
+app.get('/Ocorrencia_Listar', (req, res) => {
+    res.render('Ocorrencia_Listar', {
+        title: 'Editar Paciente',
+        esconderHeader: false 
+    });
+  });
+  
+
 // Servidor
 app.listen(3000, function() {
     console.log('Servidor rodando em http://localhost:3000');
