@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do título */
+h1 {
+    font-size: 28px;
+    color: #2c3e50;
+    text-align: center;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+/* Estilos do formulário */
+form {
+    background-color: #ffffff;
+    padding: 30px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 600px;
+}
+
+/* Grupo de formulários */
+div {
+    margin-bottom: 15px;
+}
+
+div label {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Estilo dos inputs e selects */
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Foco nos inputs */
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
+}
+
+/* Estilos do botão */
+button[type="submit"],
+a.btn-cancel {
+    width: 48%;
+    background-color: #3498db;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+button[type="submit"]:hover,
+a.btn-cancel:hover {
+    background-color: #2980b9;
+}
+
+/* Botão Cancelar */
+a.btn-cancel {
+    background-color: #e74c3c;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+}
+
+a.btn-cancel:hover {
+    background-color: #c0392b;
+}
+
+/* Formatação dos botões */
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    form {
+        padding: 20px;
+        margin: 15px;
+    }
+
+    div label {
+        font-size: 14px;
+    }
+
+    button[type="submit"],
+    a.btn-cancel {
+        font-size: 16px;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

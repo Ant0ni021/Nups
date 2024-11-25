@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/Styles_Listar_Produto.css">
+    <title>Lista de Produtos</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Lista de Produtos</h2>
+        <a href="/produtos/create" class="btn btn-primary">Adicionar Produto</a>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Fornecedor</th>
+                    <th>Observações</th>
+                    <th>Ações</th>
+                    <th>Ajustes de Estoque</th> <!-- Nova coluna para ajuste de estoque -->
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Exemplo de produto. Esse conteúdo seria gerado dinamicamente -->
+                <tr>
+                    <td>1</td>
+                    <td>Produto A</td>
+                    <td>Fornecedor X</td>
+                    <td>Observação do produto A</td>
+                    <td>
+                        <a href="/produtos/1/edit" class="btn btn-warning">Editar</a>
+                        <form action="/produtos/1?_method=DELETE" method="POST" style="display:inline;">
+                            <button type="submit" class="btn btn-danger">Deletar</button>
+                        </form>
+                    </td>
+                    <td>
+                        <a href="/ajustes/create?produtoId=1" class="btn btn-primary">Ajustar Estoque</a>
+                    </td>
+                </tr>
+                <!-- Outro produto de exemplo -->
+                <tr>
+                    <td>2</td>
+                    <td>Produto B</td>
+                    <td>Fornecedor Y</td>
+                    <td>Observação do produto B</td>
+                    <td>
+                        <a href="/produtos/2/edit" class="btn btn-warning">Editar</a>
+                        <form action="/produtos/2?_method=DELETE" method="POST" style="display:inline;">
+                            <button type="submit" class="btn btn-danger">Deletar</button>
+                        </form>
+                    </td>
+                    <td>
+                        <a href="/ajustes/create?produtoId=2" class="btn btn-primary">Ajustar Estoque</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

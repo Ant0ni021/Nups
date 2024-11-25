@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/Ocorrencia_Listar.css">
+    <title>Lista de Ocorrências</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Lista de Ocorrências</h2>
+        <a href="/ocorrencias/create" class="btn btn-primary" style="margin-bottom: 15px;">Adicionar Nova Ocorrência</a>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Data</th>
+                    <th>Relatório</th>
+                    <th>Horário de Chegada</th>
+                    <th>Horário de Saída</th>
+                    <th>Profissional</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>2024-11-11</td>
+                    <td>Relatório exemplo</td>
+                    <td>08:00</td>
+                    <td>12:00</td>
+                    <td>Dr. João Silva</td>
+                    <td>
+                        <a href="/ocorrencias/1/edit" class="btn btn-warning">Editar</a>
+                        <form action="/ocorrencias/1?_method=DELETE" method="POST" style="display:inline;">
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja remover esta ocorrência?');">Remover</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>2024-11-10</td>
+                    <td>Relatório exemplo 2</td>
+                    <td>09:30</td>
+                    <td>13:30</td>
+                    <td>Dr. Maria Oliveira</td>
+                    <td>
+                        <a href="/ocorrencias/2/edit" class="btn btn-warning">Editar</a>
+                        <form action="/ocorrencias/2?_method=DELETE" method="POST" style="display:inline;">
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja remover esta ocorrência?');">Remover</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

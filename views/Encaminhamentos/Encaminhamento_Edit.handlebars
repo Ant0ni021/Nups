@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/Encaminhamento_Edit.CSS">
+    <title>Editar Encaminhamento</title>
+</head>
+<body>
+    <h1>Editar Encaminhamento</h1>
+    <form action="/encaminhamentos/{{encaminhamento.id}}" method="POST">
+        <input type="hidden" name="_method" value="PUT">
+        
+        <div>
+            <label for="nomePaciente">Nome do Paciente:</label>
+            <input type="text" id="nomePaciente" name="nomePaciente" value="{{encaminhamento.nomePaciente}}" required>
+        </div>
+        <div>
+            <label for="matriculaPaciente">Matrícula do Paciente:</label>
+            <input type="number" id="matriculaPaciente" name="matriculaPaciente" value="{{encaminhamento.matriculaPaciente}}" required>
+        </div>
+        <div>
+            <label for="nomeProfissional">Nome do Profissional:</label>
+            <input type="text" id="nomeProfissional" name="nomeProfissional" value="{{encaminhamento.nomeProfissional}}" required>
+        </div>
+        <div>
+            <label for="profissaoProfissional">Profissão do Profissional:</label>
+            <select id="profissaoProfissional" name="profissaoProfissional" required>
+                <option value="Assistente Social" {{#if (eq encaminhamento.profissaoProfissional "Assistente Social")}}selected{{/if}}>Assistente Social</option>
+                <option value="Psicólogo" {{#if (eq encaminhamento.profissaoProfissional "Psicólogo")}}selected{{/if}}>Psicólogo</option>
+                <option value="Psiquiatra" {{#if (eq encaminhamento.profissaoProfissional "Psiquiatra")}}selected{{/if}}>Psiquiatra</option>
+            </select>
+        </div>
+
+        <!-- Botões Salvar e Cancelar -->
+        <div class="form-buttons">
+            <button type="submit" class="btn btn-save">Salvar</button>
+            <a href="/encaminhamentos" class="btn btn-cancel">Cancelar</a>
+        </div>
+    </form>
+</body>
+</html>

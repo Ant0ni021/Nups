@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/Style_Listar_Paciente.css">
+    <title>Lista de Pacientes</title>
+</head>
+<body>
+    <main class="container">
+        <!-- Título da página -->
+        <h1 class="text-center my-4">Lista de Pacientes</h1>
+
+        <!-- Botão para adicionar paciente -->
+        <div class="text-right mb-3">
+            <a href="/pacientes/create" class="btn btn-primary">Adicionar Paciente</a>
+        </div>
+
+        <!-- Tabela de pacientes -->
+        <table class="table table-striped mt-3">
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Matricula</th>
+                <th>Encaminhamento</th>
+                <th>Ações</th>
+            </tr>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>João da Silva</td>
+                    <td>12345</td>
+                    <td>Psicoterapia</td>
+                    <td>
+                        <a href="/pacientes/1/edit" class="btn btn-warning btn-sm mr-2">Editar</a>
+                        <form action="/pacientes/1?_method=DELETE" method="POST" style="display:inline;">
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja deletar este paciente?');" aria-label="Deletar paciente João da Silva">Deletar</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Maria Oliveira</td>
+                    <td>67890</td>
+                    <td>Aconselhamento</td>
+                    <td>
+                        <a href="/pacientes/2/edit" class="btn btn-warning btn-sm mr-2">Editar</a>
+                        <form action="/pacientes/2?_method=DELETE" method="POST" style="display:inline;">
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja deletar este paciente?');" aria-label="Deletar paciente Maria Oliveira">Deletar</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Pedro Souza</td>
+                    <td>11223</td>
+                    <td>Suporte Social</td>
+                    <td>
+                        <a href="/pacientes/3/edit" class="btn btn-warning btn-sm mr-2">Editar</a>
+                        <form action="/pacientes/3?_method=DELETE" method="POST" style="display:inline;">
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja deletar este paciente?');" aria-label="Deletar paciente Pedro Souza">Deletar</button>
+                        </form>
+                    </td>
+                </tr>
+                <!-- Caso não haja pacientes -->
+                <tr>
+                    <td colspan="5" class="text-center">Nenhum paciente encontrado.</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

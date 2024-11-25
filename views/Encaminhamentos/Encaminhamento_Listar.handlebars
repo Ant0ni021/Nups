@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/Encaminhamento_Listar.CSS">
+    <title>Lista de Encaminhamentos</title>
+</head>
+<body>
+    <h1 class="text-center mt-5">Lista de Encaminhamentos</h1>
+    <div class="container mt-4">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Matrícula Paciente</th>
+                    <th>Nome do Paciente</th>
+                    <th>Nome do Profissional</th>
+                    <th>Assunto Acolhimento</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>123456</td>
+                    <td>João Silva</td>
+                    <td>Dr. Ana Souza</td>
+                    <td>Problema de ansiedade</td>
+                    <td>Em andamento</td>
+                    <td>
+                        <a href="/encaminhamentos/1/edit" class="btn btn-warning btn-sm">Editar</a>
+                        <form action="/encaminhamentos/1?_method=DELETE" method="POST" style="display:inline;">
+                            <button type="submit" class="btn btn-danger btn-sm">Deletar</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>789012</td>
+                    <td>Maria Oliveira</td>
+                    <td>Dr. Carlos Silva</td>
+                    <td>Depressão moderada</td>
+                    <td>Concluído</td>
+                    <td>
+                        <a href="/encaminhamentos/2/edit" class="btn btn-warning btn-sm">Editar</a>
+                        <form action="/encaminhamentos/2?_method=DELETE" method="POST" style="display:inline;">
+                            <button type="submit" class="btn btn-danger btn-sm">Deletar</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>345678</td>
+                    <td>Ana Costa</td>
+                    <td>Dr. Rafael Lima</td>
+                    <td>Problemas emocionais</td>
+                    <td>Em andamento</td>
+                    <td>
+                        <a href="/encaminhamentos/3/edit" class="btn btn-warning btn-sm">Editar</a>
+                        <form action="/encaminhamentos/3?_method=DELETE" method="POST" style="display:inline;">
+                            <button type="submit" class="btn btn-danger btn-sm">Deletar</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-center">
+            <!-- Aqui poderiam ir outros botões ou links, como "Adicionar Encaminhamento" -->
+        </div>
+    </div>
+</body>
+</html>

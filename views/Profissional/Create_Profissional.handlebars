@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo - Criar Profissional</title>
+    <link rel="stylesheet" href="/CSS/styles.css">
+    <link rel="stylesheet" href="/CSS/Styles_Create_Profissional.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Conteúdo Principal -->
+    <div class="main-content">
+        <main class="container mt-5">
+            <!-- Título da Página -->
+            <h1>Criar Profissional</h1>
+            
+            <!-- Formulário de Cadastro -->
+            <form action="/profissionais" method="POST" class="mt-4">
+                <!-- Informações Básicas -->
+                <fieldset>
+                    <legend>Informações Básicas</legend>
+                    <div class="form-group">
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone:</label>
+                        <input type="text" id="telefone" name="telefone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cargo">Cargo:</label>
+                        <select id="cargo" name="cargo" required>
+                            <option value="psicologo">Psicólogo</option>
+                            <option value="assistente_social">Assistente Social</option>
+                            <option value="administrador">Administrador</option>
+                            <!-- Adicione outros cargos conforme necessário -->
+                        </select>
+                    </div>
+                </fieldset>
+
+                <!-- Dados de Login -->
+                <fieldset>
+                    <legend>Dados de Login</legend>
+                    <div class="form-group">
+                        <label for="usuario">Nome de Usuário:</label>
+                        <input type="text" id="usuario" name="usuario" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="senha">Senha:</label>
+                        <input type="password" id="senha" name="senha" required>
+                    </div>
+                </fieldset>
+
+                <!-- Informações Profissionais -->
+                <fieldset>
+                    <legend>Informações Profissionais</legend>
+                    <div class="form-group">
+                        <label for="data_admissao">Data de Admissão:</label>
+                        <input type="date" id="data_admissao" name="data_admissao" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="num_registro">Número de Registro Profissional:</label>
+                        <input type="text" id="num_registro" name="num_registro" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="departamento">Departamento:</label>
+                        <input type="text" id="departamento" name="departamento" required>
+                    </div>
+                </fieldset>
+
+                <!-- Botão de Envio -->
+                <div class="form-group">
+                    <button type="submit" class="btn">Salvar</button>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <script src="/JS/script.js"></script>
+</body>
+</html>

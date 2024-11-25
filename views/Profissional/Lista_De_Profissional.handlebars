@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/Styles_Lista_De_Profissional.css">
+    <title>Lista de Profissionais</title>
+</head>
+<body>
+    
+<main class="container mt-5">
+    <h2>Lista de Profissionais</h2>
+    <div class="text-right mb-3">
+        <a href="/profissionais/create" class="btn btn-primary">Adicionar Profissional</a>
+    </div>
+    <table class="table table-striped mt-3">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Cargo</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Exemplo de dados fictícios -->
+            <tr>
+                <td>João da Silva</td>
+                <td>joao.silva@email.com</td>
+                <td>Psicólogo</td>
+                <td>
+                    <a href="/Edit_Profissional" class="btn btn-warning btn-sm">Editar</a>
+                    <form action="/profissionais/1?_method=DELETE" method="POST" style="display:inline;">
+                        <button type="submit" class="btn btn-danger btn-sm">Deletar</button>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>Maria Oliveira</td>
+                <td>maria.oliveira@email.com</td>
+                <td>Assistente Social</td>
+                <td>
+                    <a href="/Edit_Profissional" class="btn btn-warning btn-sm">Editar</a>
+                    <form action="/profissionais/2?_method=DELETE" method="POST" style="display:inline;">
+                        <button type="submit" class="btn btn-danger btn-sm">Deletar</button>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>Paulo Santos</td>
+                <td>paulo.santos@email.com</td>
+                <td>Administrador</td>
+                <td>
+                    <a href="/Edit_Profissional" class="btn btn-warning btn-sm">Editar</a>
+                    <form action="/profissionais/3?_method=DELETE" method="POST" style="display:inline;">
+                        <button type="submit" class="btn btn-danger btn-sm">Deletar</button>
+                    </form>
+                </td>
+            </tr>
+            <!-- Fim dos dados fictícios -->
+        </tbody>
+    </table>
+</main>
+
+</body>
+</html>
